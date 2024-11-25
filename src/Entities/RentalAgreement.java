@@ -4,7 +4,8 @@ import java.util.Date;
 import java.util.List;
 
 public class RentalAgreement {
-    private int agreementId;
+    private String agreementId;
+    private Owner owner;
     private Tenant mainTenant;
     private List<Tenant> subTenants;
     private Property property;
@@ -12,8 +13,9 @@ public class RentalAgreement {
     private double rentingFee;
     private String status;
 
-    public RentalAgreement(int agreementId, List<Tenant> subTenants, Tenant mainTenant, Property property, Date contractDate, double rentingFee, String status) {
+    public RentalAgreement(String agreementId, Owner owner, List<Tenant> subTenants, Tenant mainTenant, Property property, Date contractDate, double rentingFee, String status) {
         this.agreementId = agreementId;
+        this.owner = owner;
         this.subTenants = subTenants;
         this.mainTenant = mainTenant;
         this.property = property;
@@ -24,11 +26,19 @@ public class RentalAgreement {
 
     // Getter and Setter
 
-    public int getAgreementId() {
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
+
+    public String getAgreementId() {
         return agreementId;
     }
 
-    public void setAgreementId(int agreementId) {
+    public void setAgreementId(String agreementId) {
         this.agreementId = agreementId;
     }
 
